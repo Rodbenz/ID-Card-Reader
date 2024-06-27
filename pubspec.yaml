@@ -1,0 +1,86 @@
+name: dipchip
+
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0-99.0.dev <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  camera: ^0.10.0+1
+  path_provider: ^2.0.11
+  path: ^1.8.3
+  
+  cupertino_icons: ^1.0.6
+  intl: ^0.19.0
+  thai_idcard_reader_flutter: ^0.0.7 # Package : อ่านบัตร
+  image_picker: ^1.0.7 # Package : กล้อง
+  loading_animation_widget: ^1.2.1 # Package : Animation เข้าแอปพลิเคชัน
+  flutter_launcher_icons: ^0.13.1 # Package : ไอคอน
+  google_fonts: ^6.2.1 # Package : ฟร้อน
+  capture_identity: ^1.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+# Package สำหรับสร้างไอคอนแอปพลิเคชัน คำสั่ง build icon : flutter pub run flutter_launcher_icons:main
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo/logo_BION.png"
+  round_icon: true # ตั้งค่า true ให้รูปโลโก้เป็นรูปวงกลม || แต่ยังไม่เป็นวงกลม
+  color: "#F5F5DC"
+  min_sdk_android: 21 # android min sdk min: 16; default 21
+  web:
+    generate: true
+    image_path: "assets/logo/logo_BION.png"
+    background_color: "#F5F5DC"
+    theme_color: "#F5F5DC"
+  windows:
+    generate: true
+    image_path: "assets/logo/logo_BION.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/logo/logo_BION.png"
+  android_gravity: fill
+  ios_content_mode: scaleAspectFill
+  fullscreen: true
+
+flutter:
+  uses-material-design: true
+
+  # เรียกใช้รูปภาพ เช่น หน้าโลโก้โหลดเข้าแอปพลิเคชัน
+  assets:
+    - assets/logo/logo.png
+    - assets/logo/logos.png
+    - assets/logo/loading.gif
+    - assets/logo/loadingWhite.gif
+    - assets/logo/Logo_TRR_Lin_TH.png
+
+  # ฟร้อนของแอปพลิเคชัน
+  fonts:
+    - family: Kanit
+      fonts:
+        - asset: assets/Fonts/Kanit-Black.ttf
+          weight: 700
+        - asset: assets/Fonts/Kanit-SemiBold.ttf
+          weight: 600
+        - asset: assets/Fonts/Kanit-Medium.ttf
+          weight: 500
+        - asset: assets/Fonts/Kanit-Regular.ttf
+          weight: 400
+        - asset: assets/Fonts/Kanit-ExtraLight.ttf
+          weight: 300
+        - asset: assets/Fonts/Kanit-Thin.ttf
+          weight: 200
+        - asset: assets/Fonts/Kanit-Light.ttf
+          weight: 100
+
