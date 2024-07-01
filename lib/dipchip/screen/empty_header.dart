@@ -6,8 +6,8 @@ class EmptyHeader extends StatelessWidget {
   const EmptyHeader({
     this.icon,
     this.text,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

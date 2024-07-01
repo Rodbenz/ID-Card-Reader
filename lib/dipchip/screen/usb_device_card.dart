@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class UsbDeviceCard extends StatelessWidget {
   final dynamic device;
   const UsbDeviceCard({
-    Key? key,
+    super.key,
     this.device,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

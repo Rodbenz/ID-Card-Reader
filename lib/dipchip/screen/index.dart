@@ -7,7 +7,6 @@ import 'package:thai_idcard_reader_flutter/thai_idcard_reader_flutter.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:dipchip/dipchip/screen/display_info.dart';
 import 'package:dipchip/dipchip/screen/empty_header.dart';
-import 'package:dipchip/dipchip/screen/usb_device_card.dart';
 import 'package:dipchip/dipchip/screen/customButton.dart';
 
 // Declare a global variable
@@ -20,7 +19,7 @@ void main() {
 }
 
 class IdCard extends StatefulWidget {
-  const IdCard({Key? key}) : super(key: key);
+  const IdCard({super.key});
 
   @override
   State<IdCard> createState() => _IdCardState();
@@ -71,7 +70,7 @@ class _IdCardState extends State<IdCard> {
       });
     } catch (e) {
       setState(() {
-        _error = "_onUSB " + e.toString();
+        _error = "_onUSB $e";
       });
     }
   }
@@ -88,7 +87,7 @@ class _IdCardState extends State<IdCard> {
       }
     } catch (e) {
       setState(() {
-        _error = "_onData " + e.toString();
+        _error = "_onData $e";
       });
     }
   }
@@ -130,8 +129,8 @@ class _IdCardState extends State<IdCard> {
       home: Scaffold(
         // ******************** Nav Bar = AppBar ******************** //
         appBar: AppBar(
-          backgroundColor: Color(0xFFC9AE9A),
-          title: Text(
+          backgroundColor: const Color(0xFFC9AE9A),
+          title: const Text(
             'ตรวจสอบข้อมูล',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
@@ -220,76 +219,76 @@ class _IdCardState extends State<IdCard> {
                       Uint8List.fromList(_data!.photo),
                     ),
                   ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 if (_data!.gender != null)
                   DisplayInfo(
                     title: 'เพศ',
-                    value: '${_data!.gender == 1 ? 'ชาย' : 'หญิง'}',
+                    value: _data!.gender == 1 ? 'ชาย' : 'หญิง',
                     valueTextStyle:
-                        TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
+                        const TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
                   ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 if (_data!.cid != null)
                   DisplayInfo(
                     title: 'เลขบัตรประชาชน',
                     value: _data!.cid!,
                     valueTextStyle:
-                        TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
+                        const TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
                   ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 if (_data!.firstnameTH != null && _data!.lastnameTH != null)
                   DisplayInfo(
                     title: 'ชื่อ-นามสกุล (ภาษาไทย)',
                     value:
                         '${_data!.titleTH} ${_data!.firstnameTH} ${_data!.lastnameTH}',
                     valueTextStyle:
-                        TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
+                        const TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
                   ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 if (_data!.firstnameEN != null && _data!.lastnameEN != null)
                   DisplayInfo(
                     title: 'ชื่อ-นามสกุล (ภาษาอังกฤษ)',
                     value:
                         '${_data!.titleEN} ${_data!.firstnameEN} ${_data!.lastnameEN}',
                     valueTextStyle:
-                        TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
+                        const TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
                   ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 if (_data!.birthdate != null)
                   DisplayInfo(
                     title: 'วันเดือนปีเกิด',
                     value:
-                        '${_data!.birthdate.toString()}', // value: '${_data!.birthdate.toString()}\n${formattedDate(_data!.birthdate)}',
+                        _data!.birthdate.toString(), // value: '${_data!.birthdate.toString()}\n${formattedDate(_data!.birthdate)}',
                     valueTextStyle:
-                        TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
+                        const TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
                   ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 if (_data!.address != null)
                   DisplayInfo(
                     title: 'ที่อยู่',
                     value: _data!.address!,
                     valueTextStyle:
-                        TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
+                        const TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
                   ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 if (_data!.issueDate != null)
                   DisplayInfo(
                     title: 'วันออกบัตร',
                     value:
-                        '${_data!.issueDate.toString()}', // value: '${_data!.issueDate.toString()}\n${formattedDate(_data!.issueDate)}',
+                        _data!.issueDate.toString(), // value: '${_data!.issueDate.toString()}\n${formattedDate(_data!.issueDate)}',
                     valueTextStyle:
-                        TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
+                        const TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
                   ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 if (_data!.expireDate != null)
                   DisplayInfo(
                     title: 'วันหมดอายุ',
                     value:
-                        '${_data!.expireDate.toString()}', // value: '${_data!.expireDate.toString()}\n${formattedDate(_data!.expireDate)}',
+                        _data!.expireDate.toString(), // value: '${_data!.expireDate.toString()}\n${formattedDate(_data!.expireDate)}',
                     valueTextStyle:
-                        TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
+                        const TextStyle(fontSize: 10), // ปรับขนาดตามที่ต้องการ
                   ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 // CustomButton(
                 //     text: "ดำเนินการต่อ",
                 //     onPressed: () => Navigator.pushReplacement(
@@ -303,7 +302,7 @@ class _IdCardState extends State<IdCard> {
                   onPressed: () => Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => MyCitizenPhoto(
+                          builder: (context) => const MyCitizenPhoto(
                                 title: '',
                               )))),
             ],

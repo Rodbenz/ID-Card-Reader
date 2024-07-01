@@ -1,7 +1,6 @@
 import 'package:dipchip/RequestList/index.dart';
 import 'package:flutter/material.dart';
 import 'package:dipchip/common/splashscreen/splash_screen.dart';
-import 'package:dipchip/dipchip/screen/index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/splashscreen': (BuildContext context) => SplashScreen(),
+        '/splashscreen': (BuildContext context) => const SplashScreen(),
         '/requestList': (BuildContext context) => MyRequestList(),
         // '/idcard': (BuildContext context) => IdCard(),
       },

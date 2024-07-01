@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:capture_identity/capture_identity.dart';
 
 void main() {
-  runApp(MyCitizenPhoto(title: ''));
+  runApp(const MyCitizenPhoto(title: ''));
 }
 
 class MyCitizenPhoto extends StatefulWidget {
-  const MyCitizenPhoto({Key? key, required this.title}) : super(key: key);
+  const MyCitizenPhoto({super.key, required this.title});
 
   final String title;
 

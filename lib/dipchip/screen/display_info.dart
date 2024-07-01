@@ -3,11 +3,11 @@ import 'package:flutter/services.dart';
 
 class DisplayInfo extends StatelessWidget {
   const DisplayInfo({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
     required this.valueTextStyle,
-  }) : super(key: key);
+  });
 
   final String title;
   final String value;
@@ -18,7 +18,7 @@ class DisplayInfo extends StatelessWidget {
     TextStyle sTitle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
     TextStyle sVal = const TextStyle(fontSize: 18);
 
-    _copyFn(value) {
+    copyFn(value) {
       Clipboard.setData(ClipboardData(text: value)).then((_) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("คัดลอกสำเร็จ")));
       });

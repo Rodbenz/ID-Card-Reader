@@ -1,6 +1,5 @@
 import 'package:dipchip/RequestList/index.dart';
 import 'package:flutter/material.dart';
-import 'package:dipchip/dipchip/screen/index.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart'; // สำหรับ Load หน้าเข้าใช้แอปพลิเคชันก่อนถึง Logo เข้าใช้งาน
 
 class SplashScreen extends StatefulWidget {

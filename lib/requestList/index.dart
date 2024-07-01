@@ -1,9 +1,11 @@
 import 'package:dipchip/dipchip/screen/index.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyRequestList());
+void main() => runApp(const MyRequestList());
 
 class MyRequestList extends StatelessWidget {
+  const MyRequestList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,7 +23,7 @@ void _showDetails(BuildContext context, Map<String, String> item) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text("รายละเอียด"),
+        title: const Text("รายละเอียด"),
         content: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
@@ -34,7 +36,7 @@ void _showDetails(BuildContext context, Map<String, String> item) {
         ),
         actions: <Widget>[
           TextButton(
-            child: Text("ปิด"),
+            child: const Text("ปิด"),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -56,12 +58,14 @@ class CardListScreen extends StatelessWidget {
     },
   );
 
+  CardListScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xFFC9AE9A),
-          title: Text(
+          backgroundColor: const Color(0xFFC9AE9A),
+          title: const Text(
             'รายการคำขอสินเชื่อ',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           )),
@@ -71,39 +75,39 @@ class CardListScreen extends StatelessWidget {
           return InkWell(
             onTap: () => {
               Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => IdCard()))
+                  context, MaterialPageRoute(builder: (context) => const IdCard()))
               // _showDetails(context, items[index])
             },
             child: Card(
-              margin: EdgeInsets.all(10.0),
+              margin: const EdgeInsets.all(10.0),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
               ),
               elevation: 5,
               child: Padding(
-                padding: EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(15.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
                       "ชื่อ: ${items[index]['ชื่อ']}",
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18.0, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 5.0),
+                    const SizedBox(height: 5.0),
                     Text(
                       "นามสกุล: ${items[index]['นามสกุล']}",
-                      style: TextStyle(fontSize: 16.0),
+                      style: const TextStyle(fontSize: 16.0),
                     ),
-                    SizedBox(height: 5.0),
+                    const SizedBox(height: 5.0),
                     Text(
                       "เลขบัตรประชาชน: ${items[index]['เลขบัตรประชาชน']}",
-                      style: TextStyle(fontSize: 16.0),
+                      style: const TextStyle(fontSize: 16.0),
                     ),
-                    SizedBox(height: 5.0),
+                    const SizedBox(height: 5.0),
                     Text(
                       "วันที่ขอ: ${items[index]['วันที่ขอ']}",
-                      style: TextStyle(fontSize: 16.0),
+                      style: const TextStyle(fontSize: 16.0),
                     ),
                   ],
                 ),
